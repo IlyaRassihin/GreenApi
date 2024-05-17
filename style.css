@@ -15,6 +15,7 @@
 #getSettings {
     width: 207px;
     height: 30px;
+    cursor: pointer;
     position: absolute;
     top: 11%;
     right: 55%;
@@ -23,6 +24,7 @@
 #getStateInstance {
     width: 207px;
     height: 30px;
+    cursor: pointer;
     position: absolute;
     top: 15%;
     right: 55%;
@@ -46,6 +48,7 @@
 #sendMessage {
     width: 207px;
     height: 30px;
+    cursor: pointer;
     position: absolute;
     top: 35%;
     right: 55%;
@@ -68,6 +71,7 @@
 #sendFileByUrl {
     width: 207px;
     height: 30px;
+    cursor: pointer;
     position: absolute;
     top: 48%;
     right: 55%;
