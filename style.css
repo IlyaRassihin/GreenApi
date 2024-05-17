@@ -1,0 +1,88 @@
+#input_idInstance {
+    width: 200px;
+    position: absolute;
+    top: 5%;
+    left: 35%;
+}
+
+#apiToken {
+    width: 200px;
+    position: absolute;
+    top: 8%;
+    left: 35%;
+}
+
+#getSettings {
+    width: 207px;
+    height: 30px;
+    position: absolute;
+    top: 11%;
+    left: 35%;
+}
+
+#getStateInstance {
+    width: 207px;
+    height: 30px;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+}
+
+#chatID {
+    width: 200px;
+    position: absolute;
+    top: 22%;
+    left: 35%;
+}
+
+#message {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+}
+
+#sendMessage {
+    width: 207px;
+    height: 30px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+
+#chatID_2 {
+    width: 200px;
+    position: absolute;
+    top: 42%;
+    left: 35%;
+}
+
+#url {
+    width: 200px;
+    position: absolute;
+    top: 45%;
+    left: 35%;
+}
+
+#sendFileByUrl {
+    width: 207px;
+    height: 30px;
+    position: absolute;
+    top: 48%;
+    left: 35%;
+}
+
+p {
+    position: absolute;
+    top: 1%;
+    right: 40%;
+}
+
+#outputarea {
+    position: absolute;
+    top: 5%;
+    right: 30%;
+    width: 20%;
+    height: 700px;
+}
