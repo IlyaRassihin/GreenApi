@@ -8,143 +8,125 @@
 <body>
 
 <p>Ответ:</p>
-    
-<input type="text" id="input_idInstance" placeholder="idInstance">
 
+<input type="text" id="input_idInstance" placeholder="idInstance">
 <input type="text" id="apiToken" placeholder="apiTokenInstanse">
-    
-    
+
 <button id="getSettings" type="button" name="popup-button" onclick="getSettings()">getSettings</button>
 <button id="getStateInstance" type="button" name="popup-button" onclick="getStateInstance()">getStateInstance</button>
-    
+
 <input type="text" id="chatID" placeholder="79991234567">
-   
-<textarea type="text" id="message" placeholder="enter your message"></textarea> 
-    
+
+<textarea type="text" id="message" placeholder="enter your message"></textarea>
+
 <button id="sendMessage" type="button" name="popup-button" onclick="sendMessage()">sendMessage</button>
-    
+
 <input type="text" id="chatID_2" placeholder="79991234567">
-    
 <input type="text" id="url" placeholder="enter url">
-    
+
 <button id="sendFileByUrl" type="button" name="popup-button" onclick="sendFileByUrl()">sendFileByUrl</button>
-    
-<textarea id = "outputarea" name="textarea" readonly></textarea>
-    
-    
+
+<textarea id="outputarea" name="textarea" readonly></textarea>
+
 <script>
 
-
-async function getSettings() {
+    async function getSettings() {
 
 //idInstanse = 1103937713
 //waInstance1103937713
 //apiUrl = https://api.green-api.com/
 //ApiTokenInstanse = 1b30255b2e9d4b1fbdecd3532e30015826c5a20db83e48bb9d
-    
-let idInstance = document.getElementById("input_idInstance").value.trim();
-let apiTokenInstanse = document.getElementById("apiToken").value.trim();
-let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "getSettings/" + apiTokenInstanse;
-    
-    
-let response = await fetch(apiUrl);
 
-if (response.ok) { // если HTTP-статус в диапазоне 200-299
-  let json = await response.json();
-    //document.getElementById("output").innerHTML += `<pre>${json}</pre>`;
-    json = JSON.stringify(json, null, 4);
-    document.getElementById("outputarea").innerHTML =  json;
-} else {
-  alert("Ошибка HTTP: " + response.status);
-}
+        let idInstance = document.getElementById("input_idInstance").value.trim();
+        let apiTokenInstanse = document.getElementById("apiToken").value.trim();
+        let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "getSettings/" + apiTokenInstanse;
+        let response = await fetch(apiUrl);
 
+        if (response.ok) { // если HTTP-статус в диапазоне 200-299
+            let json = await response.json();
+            //document.getElementById("output").innerHTML += `<pre>${json}</pre>`;
+            json = JSON.stringify(json, null, 4);
+            document.getElementById("outputarea").innerHTML = json;
+        } else {
+            alert("Ошибка HTTP: " + response.status);
+        }
+    }
 
-}
-    
-async function getStateInstance() {
-    
-let idInstance = document.getElementById("input_idInstance").value.trim();
-let apiTokenInstanse = document.getElementById("apiToken").value.trim();
-let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "getStateInstance/" + apiTokenInstanse;
-    
-let response = await fetch(apiUrl);
+    async function getStateInstance() {
 
-if (response.ok) {
-  let json = await response.json();
-    json = JSON.stringify(json, null, 4);
-    document.getElementById("outputarea").innerHTML =  json;
-} else {
-  alert("Ошибка HTTP: " + response.status);
-}
+        let idInstance = document.getElementById("input_idInstance").value.trim();
+        let apiTokenInstanse = document.getElementById("apiToken").value.trim();
+        let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "getStateInstance/" + apiTokenInstanse;
+        let response = await fetch(apiUrl);
 
+        if (response.ok) {
+            let json = await response.json();
+            json = JSON.stringify(json, null, 4);
+            document.getElementById("outputarea").innerHTML = json;
+        } else {
+            alert("Ошибка HTTP: " + response.status);
+        }
+    }
 
-}
-    
-async function sendMessage() {
-    
-let idInstance = document.getElementById("input_idInstance").value.trim();
-let apiTokenInstanse = document.getElementById("apiToken").value.trim();
-let chatID = document.getElementById("chatID").value.trim();
-let message = document.getElementById("message").value;
+    async function sendMessage() {
 
-let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "sendMessage/" + apiTokenInstanse;
-    
-let response = await fetch(apiUrl, {
-  method: "POST",
-  body: JSON.stringify({
-    chatId: chatID + "@c.us",
-    message: message
-  }),
-  headers: {
-    "Content-type": "application/json; charset=UTF-8"
-  }
-});
-    
-if (response.ok) {
-  let json = await response.json();
-    json = JSON.stringify(json, null, 4);
-    document.getElementById("outputarea").innerHTML =  json;
-} else {
-  alert("Ошибка HTTP: " + response.status);
-}
-}
-    
-async function sendFileByUrl() {
-    //https://z126.fpg.ru/zeon/batman.jpeg
-let idInstance = document.getElementById("input_idInstance").value.trim();
-let apiTokenInstanse = document.getElementById("apiToken").value.trim();
-let chatID = document.getElementById("chatID_2").value.trim();
-let url = document.getElementById("url").value.trim();
-let fileName = decodeURI(url.split('/').pop());
-    
-let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "sendFileByUrl/" + apiTokenInstanse;
-    
-let response = await fetch(apiUrl, {
-  method: "POST",
-  body: JSON.stringify({
-    chatId: chatID + "@c.us",
-    urlFile: url,
-    fileName: fileName
-  }),
-  headers: {
-    "Content-type": "application/json; charset=UTF-8"
-  }
-});
-    
-if (response.ok) {
-  let json = await response.json();
-    json = JSON.stringify(json, null, 4);
-    document.getElementById("outputarea").innerHTML =  json;
-} else {
-  alert("Ошибка HTTP: " + response.status);
-}
-}
-    
-    
-    
+        let idInstance = document.getElementById("input_idInstance").value.trim();
+        let apiTokenInstanse = document.getElementById("apiToken").value.trim();
+        let chatID = document.getElementById("chatID").value.trim();
+        let message = document.getElementById("message").value;
+        let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "sendMessage/" + apiTokenInstanse;
+
+        let response = await fetch(apiUrl, {
+            method: "POST",
+            body: JSON.stringify({
+                chatId: chatID + "@c.us",
+                message: message
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+
+        if (response.ok) {
+            let json = await response.json();
+            json = JSON.stringify(json, null, 4);
+            document.getElementById("outputarea").innerHTML = json;
+        } else {
+            alert("Ошибка HTTP: " + response.status);
+        }
+    }
+
+    async function sendFileByUrl() {
+        //https://z126.fpg.ru/zeon/batman.jpeg
+        let idInstance = document.getElementById("input_idInstance").value.trim();
+        let apiTokenInstanse = document.getElementById("apiToken").value.trim();
+        let chatID = document.getElementById("chatID_2").value.trim();
+        let url = document.getElementById("url").value.trim();
+        let fileName = decodeURI(url.split('/').pop());
+        let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "sendFileByUrl/" + apiTokenInstanse;
+
+        let response = await fetch(apiUrl, {
+            method: "POST",
+            body: JSON.stringify({
+                chatId: chatID + "@c.us",
+                urlFile: url,
+                fileName: fileName
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+
+        if (response.ok) {
+            let json = await response.json();
+            json = JSON.stringify(json, null, 4);
+            document.getElementById("outputarea").innerHTML = json;
+        } else {
+            alert("Ошибка HTTP: " + response.status);
+        }
+    }
+
 </script>
-
-    
 </body>
 </html>
 
