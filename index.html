@@ -32,11 +32,6 @@
 
     async function getSettings() {
 
-//idInstanse = 1103937713
-//waInstance1103937713
-//apiUrl = https://api.green-api.com/
-//ApiTokenInstanse = 1b30255b2e9d4b1fbdecd3532e30015826c5a20db83e48bb9d
-
         let idInstance = document.getElementById("input_idInstance").value.trim();
         let apiTokenInstanse = document.getElementById("apiToken").value.trim();
         let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "getSettings/" + apiTokenInstanse;
@@ -97,7 +92,7 @@
     }
 
     async function sendFileByUrl() {
-        //https://z126.fpg.ru/zeon/batman.jpeg
+        
         let idInstance = document.getElementById("input_idInstance").value.trim();
         let apiTokenInstanse = document.getElementById("apiToken").value.trim();
         let chatID = document.getElementById("chatID_2").value.trim();
