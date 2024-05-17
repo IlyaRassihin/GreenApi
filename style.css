@@ -2,14 +2,14 @@
     width: 200px;
     position: absolute;
     top: 5%;
-    left: 35%;
+    right: 55%;
 }
 
 #apiToken {
     width: 200px;
     position: absolute;
     top: 8%;
-    left: 35%;
+    right: 55%;
 }
 
 #getSettings {
@@ -17,7 +17,7 @@
     height: 30px;
     position: absolute;
     top: 11%;
-    left: 35%;
+    right: 55%;
 }
 
 #getStateInstance {
@@ -25,14 +25,14 @@
     height: 30px;
     position: absolute;
     top: 15%;
-    left: 35%;
+    right: 55%;
 }
 
 #chatID {
     width: 200px;
     position: absolute;
     top: 22%;
-    left: 35%;
+    right: 55%;
 }
 
 #message {
@@ -40,7 +40,7 @@
     height: 80px;
     position: absolute;
     top: 25%;
-    left: 35%;
+    right: 55%;
 }
 
 #sendMessage {
@@ -48,21 +48,21 @@
     height: 30px;
     position: absolute;
     top: 35%;
-    left: 35%;
+    right: 55%;
 }
 
 #chatID_2 {
     width: 200px;
     position: absolute;
     top: 42%;
-    left: 35%;
+    right: 55%;
 }
 
 #url {
     width: 200px;
     position: absolute;
     top: 45%;
-    left: 35%;
+    right: 55%;
 }
 
 #sendFileByUrl {
@@ -70,7 +70,7 @@
     height: 30px;
     position: absolute;
     top: 48%;
-    left: 35%;
+    right: 55%;
 }
 
 p {

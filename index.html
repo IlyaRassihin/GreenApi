@@ -42,8 +42,8 @@ async function getSettings() {
 //apiUrl = https://api.green-api.com/
 //ApiTokenInstanse = 1b30255b2e9d4b1fbdecd3532e30015826c5a20db83e48bb9d
     
-let idInstance = document.getElementById("input_idInstance").value;
-let apiTokenInstanse = document.getElementById("apiToken").value;
+let idInstance = document.getElementById("input_idInstance").value.trim();
+let apiTokenInstanse = document.getElementById("apiToken").value.trim();
 let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "getSettings/" + apiTokenInstanse;
     
     
@@ -63,15 +63,14 @@ if (response.ok) { // если HTTP-статус в диапазоне 200-299
     
 async function getStateInstance() {
     
-let idInstance = document.getElementById("input_idInstance").value;
-let apiTokenInstanse = document.getElementById("apiToken").value;
+let idInstance = document.getElementById("input_idInstance").value.trim();
+let apiTokenInstanse = document.getElementById("apiToken").value.trim();
 let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "getStateInstance/" + apiTokenInstanse;
     
 let response = await fetch(apiUrl);
 
-if (response.ok) { // если HTTP-статус в диапазоне 200-299
+if (response.ok) {
   let json = await response.json();
-    //document.getElementById("output").innerHTML += `<pre>${json}</pre>`;
     json = JSON.stringify(json, null, 4);
     document.getElementById("outputarea").innerHTML =  json;
 } else {
@@ -83,9 +82,9 @@ if (response.ok) { // если HTTP-статус в диапазоне 200-299
     
 async function sendMessage() {
     
-let idInstance = document.getElementById("input_idInstance").value;
-let apiTokenInstanse = document.getElementById("apiToken").value;
-let chatID = document.getElementById("chatID").value;
+let idInstance = document.getElementById("input_idInstance").value.trim();
+let apiTokenInstanse = document.getElementById("apiToken").value.trim();
+let chatID = document.getElementById("chatID").value.trim();
 let message = document.getElementById("message").value;
 
 let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "sendMessage/" + apiTokenInstanse;
@@ -101,7 +100,7 @@ let response = await fetch(apiUrl, {
   }
 });
     
-if (response.ok) { // если HTTP-статус в диапазоне 200-299
+if (response.ok) {
   let json = await response.json();
     json = JSON.stringify(json, null, 4);
     document.getElementById("outputarea").innerHTML =  json;
@@ -112,10 +111,10 @@ if (response.ok) { // если HTTP-статус в диапазоне 200-299
     
 async function sendFileByUrl() {
     //https://z126.fpg.ru/zeon/batman.jpeg
-let idInstance = document.getElementById("input_idInstance").value;
-let apiTokenInstanse = document.getElementById("apiToken").value;
-let chatID = document.getElementById("chatID_2").value;
-let url = document.getElementById("url").value;
+let idInstance = document.getElementById("input_idInstance").value.trim();
+let apiTokenInstanse = document.getElementById("apiToken").value.trim();
+let chatID = document.getElementById("chatID_2").value.trim();
+let url = document.getElementById("url").value.trim();
 let fileName = decodeURI(url.split('/').pop());
     
 let apiUrl = "https://api.green-api.com/" + "waInstance" + idInstance + "/" + "sendFileByUrl/" + apiTokenInstanse;
@@ -132,7 +131,7 @@ let response = await fetch(apiUrl, {
   }
 });
     
-if (response.ok) { // если HTTP-статус в диапазоне 200-299
+if (response.ok) {
   let json = await response.json();
     json = JSON.stringify(json, null, 4);
     document.getElementById("outputarea").innerHTML =  json;
